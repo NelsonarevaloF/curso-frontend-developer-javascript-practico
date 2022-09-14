@@ -3,31 +3,34 @@ const mobileMenuImg = document.querySelector('.menu');
 const desktopMenu = document.querySelector('.desktop-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const navbarShoppingCart = document.querySelector('.navbar-shopping-cart');
-const aside = document.querySelector('.product-detail');
+const productDetailContainer = document.querySelector('#productDetailContainer');
+const productDetailCloseIcon = document.querySelector('.product-detail-close');
+const shoppingCardContainer = document.querySelector('#shoppingCardContainer');
 const cardsContainer = document.querySelector('.cards-container');
 
 mobileMenuImg.addEventListener('click', showMobileMenu);
 navbarEmail.addEventListener('click', showDesktopMenu);
-navbarShoppingCart.addEventListener('click', toggleShoppingCart)
+navbarShoppingCart.addEventListener('click', toggleShoppingCart);
+productDetailCloseIcon.addEventListener('click', closeProductDetail);
 
 
 function showDesktopMenu() {
-	const isAsideClosed = aside.classList.contains('inactive');
+	const isAsideClosed = shoppingCardContainer.classList.contains('inactive');
 
 	if(!isAsideClosed) {
-		aside.classList.add('inactive');
+		shoppingCardContainer.classList.add('inactive');
 	}
 
 	desktopMenu.classList.toggle('inactive');
 }
 
 function showMobileMenu() {
-	const isAsideClosed = aside.classList.contains('inactive');
+	const isAsideClosed = shoppingCardContainer.classList.contains('inactive');
 
 	if(!isAsideClosed) {
-		aside.classList.add('inactive');
+		shoppingCardContainer.classList.add('inactive');
 	}
-
+	closeProductDetail ()
 	mobileMenu.classList.toggle('inactive');
 }
 
@@ -38,23 +41,23 @@ function toggleShoppingCart() {
 		mobileMenu.classList.add('inactive');
 	}
 
-	aside.classList.toggle('inactive');
+	const isProductDetailClosed = productDetailContainer.classList.contains('inactive');
+
+	if(!isProductDetailClosed) {
+		productDetailContainer.classList.add('inactive');
+	}
+
+	shoppingCardContainer.classList.toggle('inactive');
 }
 
-/*
-<div class="product-card">
-        <img src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
-        <div class="product-info">
-          <div>
-            <p>$120,00</p>
-            <p>Bike</p>
-          </div>
-          <figure>
-            <img src="./icons/bt_add_to_cart.svg" alt="">
-          </figure>
-        </div>
-      </div>
-*/
+function openProductDetailAside () {
+	shoppingCardContainer.classList.add('inactive');
+	productDetailContainer.classList.remove('inactive');
+}
+
+function closeProductDetail () {
+	productDetailContainer.classList.add('inactive');
+}
 
 const productList = [];
 productList.push({
@@ -72,6 +75,91 @@ productList.push({
 	price: 250,
 	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
 });
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
+productList.push({
+	name: 'Desktop Pc',
+	price: 250,
+	image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940?'
+});
 
 
 function renderProducts(productList) {
@@ -82,6 +170,8 @@ function renderProducts(productList) {
 		
 		const productImg = document.createElement('img');
 		productImg.setAttribute('src', product.image);
+		productImg.addEventListener('click', openProductDetailAside);
+
 		const productInfo = document.createElement('div');
 		productInfo.classList.add('product-info');
 		
